@@ -1,8 +1,9 @@
 services:
   - type: web
-    name: fastapi-anon-backend
+    name: fastapi-app
     runtime: python
-    buildCommand: ""
+    buildCommand: >
+      pip install fastapi==0.110.0 uvicorn==0.29.0 httpx==0.27.0 pydantic==2.7.3 python-dotenv==1.0.1
     startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     envVars:
       - key: PYTHON_VERSION
